@@ -1,24 +1,16 @@
 package Supermario;
 
 import java.awt.Graphics;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
-import javax.imageio.stream.ImageInputStream;
+import java.awt.Image;
 
 public class Pipe extends Things{
 	
-	protected static BufferedImage Pipes = null;
+	protected static Image Pipes = null;
 	protected int PipeWidth,PipeHeight;
+	static
 	{
-		try {
-			Pipes = ImageIO.read((ImageInputStream) new File("Img/Pipes.png"));
-		} catch (IOException e) {
-			System.out.println("Unable load Pipes!");
-		}
-		}
+		Pipes = tk.getImage(BackGround.class.getClassLoader().getResource("Img/Pipes.png"));
+	}	
 	public Pipe(int x, int y, Game game) {
 		super(x, y, game);
 		TotalWidth=UnitWidth*2;

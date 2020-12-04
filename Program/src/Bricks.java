@@ -10,15 +10,12 @@ import javax.imageio.stream.ImageInputStream;
 public class Bricks extends Things{
 
 	
-	protected static BufferedImage Bricks = null;
+	protected static Image Bricks = null;
 	protected int BricksWidth,BricksHeight;
+	static
 	{
-	try {
-		Bricks = ImageIO.read(new File("Img/Bricks.png"));
-	} catch (IOException e) {
-		System.out.println("Unable load Bricks!");
-	}
-	}
+		Bricks = tk.getImage(BackGround.class.getClassLoader().getResource("Img/Bricks.png"));
+	}	
 	Bricks(Game game ,int x , int y , int BricksWidth ,int BricksHeight){
 		super(x,y,game);
 		this.BricksWidth=BricksWidth;

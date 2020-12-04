@@ -1,28 +1,18 @@
 package Supermario;
 
 import java.awt.Graphics;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
-import javax.imageio.stream.ImageInputStream;
-
+import java.awt.Image;
 
 public class Stars extends Things{
 
-	protected static BufferedImage Stars = null;
+	protected static Image Stars = null;
 	protected int XCurrentSpeed=3,YCurrentSpeed=15,YCurrentSpeeded=3;
 	protected State CollisionWithMario = State.NoCollision;
 	protected Boxs boxs=null;
+	static
 	{
-		try {
-			Stars = ImageIO.read((ImageInputStream) new File("Img/Stars.png"));
-		} catch (IOException e) {
-			System.out.println("Unable load Stars!");
-		}
-	}
-
+		Stars = tk.getImage(BackGround.class.getClassLoader().getResource("Img/Stars.png"));
+	}	
 	Stars(int x, int y, Game game) {
 		super(x,y,game);
 		UnitWidth=23;
