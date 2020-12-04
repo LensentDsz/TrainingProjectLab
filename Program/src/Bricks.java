@@ -14,7 +14,7 @@ public class Bricks extends Things{
 	protected int BricksWidth,BricksHeight;
 	{
 	try {
-		Bricks = ImageIO.read((ImageInputStream) new File("Img/Bricks.png"));
+		Bricks = ImageIO.read(new File("Img/Bricks.png"));
 	} catch (IOException e) {
 		System.out.println("Unable load Bricks!");
 	}
@@ -29,15 +29,12 @@ public class Bricks extends Things{
 	public void Paint(Graphics g)
 	{
 		super.Paint(g);
-		Image img = null;
 		for(int i=0;i<BricksWidth;i++)
-		{
-			for(int j=0;j<BricksHeight;j++)
-			{
-				img = Bricks;
-				g.drawImage(img, x+(i-1)*UnitWidth,y+(j-1)*UnitHeight, null);
-			}
-		}
-		
+					{
+						for(int j=0;j<BricksHeight;j++)
+						{		
+							g.drawImage(Bricks, x+(i-1)*UnitWidth,y+(j-1)*UnitHeight, null);
+						}
+					}
 	}
 }
