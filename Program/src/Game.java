@@ -30,7 +30,7 @@ public class Game extends JFrame{
 	 
 	Game(){
 		super();
-		this.setBounds(0, 0, FrameWidth, FrameHeight);
+		this.setBounds(600, 300, FrameWidth, FrameHeight);
 		this.setVisible(true);
 		this.setResizable(false);
 		this.addWindowListener(new GameWindowListener());
