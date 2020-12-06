@@ -11,27 +11,24 @@ public class Bricks extends Things{
 
 	
 	protected static Image Bricks = null;
-	protected int BricksWidth,BricksHeight;
 	static
 	{
-		Bricks = tk.getImage(BackGround.class.getClassLoader().getResource("Img/Bricks.png"));
+		try {
+			Bricks=ImageIO.read(new File("Img/Bricks.png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}	
-	Bricks(Game game ,int x , int y , int BricksWidth ,int BricksHeight){
+	Bricks(Game game ,int x , int y ){
 		super(x,y,game);
-		this.BricksWidth=BricksWidth;
-		this.BricksHeight=BricksHeight;
-		TotalWidth=30*BricksWidth;
-		TotalHeight=30*BricksHeight;
+	
+		TotalWidth=30;
+		TotalHeight=30;
 	}
 	public void Paint(Graphics g)
 	{
 		super.Paint(g);
-		for(int i=0;i<BricksWidth;i++)
-					{
-						for(int j=0;j<BricksHeight;j++)
-						{		
-							g.drawImage(Bricks, x+(i-1)*UnitWidth,y+(j-1)*UnitHeight, null);
-						}
-					}
+		g.drawImage(Bricks, x,y, null);
+
 	}
 }
