@@ -15,7 +15,6 @@ public class Things {
 	protected boolean avaliable=false;
 	protected MarioMove mario=null;
 	protected List<Things> things=null;
-	protected static Image [] imgs = null;
 	protected int XCurrentSpeed=3,YCurrentSpeed=3,XSpeed=3,YSpeed=3;
 	protected State state = State.OnAir,CollisionBuilding=State.NoCollision,CollisionMonster=State.NoCollision;
 	public Things(int x, int y, Game game) {
